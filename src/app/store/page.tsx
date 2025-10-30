@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function StorePage() {
   const products = [
     { id: "tee-1", name: "Signature Tee", tag: "T-Shirt" },
