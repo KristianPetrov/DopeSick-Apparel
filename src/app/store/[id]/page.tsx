@@ -11,8 +11,8 @@ export default function ProductPage({ params }: PageProps) {
 
   return (
     <main className="mx-auto max-w-5xl px-6 md:px-10 py-10 grid gap-8 md:grid-cols-2">
-      <div className="aspect-square rounded-xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent flex items-center justify-center">
-        <Image src={product.image} alt={product.name} width={600} height={600} className="rounded-lg object-cover" />
+      <div className="aspect-square rounded-xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent relative overflow-hidden">
+        <Image src={product.image} alt={product.name} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
       </div>
       <div>
         <Link href="/store" className="inline-flex h-9 px-3 items-center justify-center rounded-md border border-[var(--accent)] text-[var(--accent)] hover:bg-[#7f1d1d]/60 transition-colors mb-4">Back to Store</Link>

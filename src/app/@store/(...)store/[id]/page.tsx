@@ -34,12 +34,12 @@ export default function ProductOverlay({ params }: PageProps) {
           <h2 id="product-title" className="text-lg font-semibold tracking-wide">{product.name}</h2>
           <button className="h-9 px-3 rounded-md border border-[var(--accent)] text-[var(--accent)] bg-black hover:bg-[#7f1d1d]/60 transition-colors" onClick={() => router.back()}>Close</button>
         </div>
-        <div className="min-h-0 overflow-y-auto">
+        <div className="min-h-0 overflow-y-auto overflow-x-hidden">
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="aspect-square rounded-lg border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent flex items-center justify-center">
-              <Image src={product.image} alt={product.name} width={600} height={600} className="rounded-lg object-cover" />
+            <div className="aspect-square rounded-lg border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent relative overflow-hidden">
+              <Image src={product.image} alt={product.name} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
             </div>
-            <div>
+            <div className="min-w-0">
               <div className="text-sm text-white/60">{product.tag}</div>
               <p className="mt-4 text-white/80 leading-relaxed">
                 Quick view for {product.name}. For full details and checkout, open the product page.
