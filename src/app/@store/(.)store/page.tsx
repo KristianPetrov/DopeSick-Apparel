@@ -35,7 +35,7 @@ export default function StoreOverlay() {
             </div>
           ))}
         </div>
-        <a href="/store" className="mt-6 inline-flex h-10 px-4 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] hover:bg-[#7f1d1d]/60 transition-colors">Open full store</a>
+        <Link href="/store" className="mt-6 inline-flex h-10 px-4 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] hover:bg-[#7f1d1d]/60 transition-colors">Open full store</Link>
       </div>
     </div>
   );

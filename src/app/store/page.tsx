@@ -13,7 +13,7 @@ export default function StorePage() {
       <h1 className="text-2xl font-semibold tracking-wide mb-6">Store</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
         {products.map((p) => (
-          <a key={p.id} href="#" className="group block">
+          <Link key={p.id} href="#" className="group block">
             <div className="aspect-[3/4] rounded-xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent group-hover:border-[var(--accent)]/50 transition-colors" />
             <div className="mt-3 flex items-center justify-between">
               <div>
@@ -22,7 +22,7 @@ export default function StorePage() {
               </div>
               <span className="text-xs text-[var(--accent)] border border-[var(--accent)] rounded-full px-2 py-0.5">View</span>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </main>

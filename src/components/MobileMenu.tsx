@@ -75,20 +75,20 @@ export default function MobileMenu() {
               >
                 Shop
               </Link>
-              <a
+              <Link
                 href="/#story"
                 onClick={closeMenu}
                 className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
               >
                 Our Story
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/#contact"
                 onClick={closeMenu}
                 className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
               >
                 Contact
-              </a>
+              </Link>
             </nav>
           </div>
         </>

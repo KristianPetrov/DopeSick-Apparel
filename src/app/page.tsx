@@ -27,9 +27,9 @@ export default function Home() {
           <Link href="/store" className="inline-flex h-10 md:h-11 px-4 md:px-6 items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:opacity-90 transition-opacity">
             Shop the Collection
           </Link>
-          <a href="#story" className="inline-flex h-10 md:h-11 px-4 md:px-6 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:bg-[color-mix(in_srgb,var(--accent)_10%,transparent)] transition-colors">
+          <Link href="#story" className="inline-flex h-10 md:h-11 px-4 md:px-6 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:bg-[color-mix(in_srgb,var(--accent)_10%,transparent)] transition-colors">
             Our Story
-          </a>
+          </Link>
         </div>
       </section>
       <section id="contact" className="z-10 w-full mt-24 border-t border-white/10">
@@ -39,8 +39,8 @@ export default function Home() {
             <p className="text-sm text-white/70 mt-1">Reach out for orders, collabs, or support.</p>
           </div>
           <div className="flex flex-col gap-2">
-            <a href="tel:+15623408000" className="inline-flex h-10 items-center justify-start rounded-md border border-[var(--accent)] text-[var(--accent)] bg-black px-4 hover:bg-[#7f1d1d]/60 transition-colors">(562) 340-8000</a>
-            <a href="mailto:smartaxweb@gmail.com" className="inline-flex h-10 items-center justify-start rounded-md border border-[var(--accent)] text-[var(--accent)] bg-black px-4 hover:bg-[#7f1d1d]/60 transition-colors">smartaxweb@gmail.com</a>
+            <Link href="tel:+15623408000" className="inline-flex h-10 items-center justify-start rounded-md border border-[var(--accent)] text-[var(--accent)] bg-black px-4 hover:bg-[#7f1d1d]/60 transition-colors">(562) 340-8000</Link>
+            <Link href="mailto:smartaxweb@gmail.com" className="inline-flex h-10 items-center justify-start rounded-md border border-[var(--accent)] text-[var(--accent)] bg-black px-4 hover:bg-[#7f1d1d]/60 transition-colors">smartaxweb@gmail.com</Link>
           </div>
         </div>
       </section>
@@ -80,10 +80,10 @@ function FooterCredit() {
   return (
     <footer className="w-full border-t border-white/10">
       <div className="mx-auto max-w-6xl px-6 md:px-10 py-8 flex items-center justify-center gap-3">
-        <a href="https://www.setfreedigitaldisciples.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm">
+        <Link href="https://www.setfreedigitaldisciples.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm">
           <Image src="/set-free-digital-disciples-portal-jesus.png" alt="Set Free Digital Disciples" width={90} height={90} />
           <span>Website designed by Set Free Digital Disciples</span>
-        </a>
+        </Link>
       </div>
     </footer>
   );
