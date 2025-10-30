@@ -15,11 +15,17 @@ export default function StoreOverlay() {
   }, [router]);
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 backdrop-blur-sm" onClick={() => router.back()}>
-      <div className="relative mx-4 w-full max-w-4xl rounded-xl border border-[var(--accent)]/30 bg-black p-6" onClick={(e) => e.stopPropagation()}>
-        <div className="absolute -inset-px rounded-xl pointer-events-none" style={{ boxShadow: "0 0 120px 30px rgba(220,38,38,0.08) inset" }} />
+    <div className="fixed inset-0 z-[60] flex items-end md:items-center justify-center bg-black/70 backdrop-blur-sm p-2 md:p-6" onClick={() => router.back()}>
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="store-title"
+        className="relative w-full max-w-4xl rounded-t-2xl md:rounded-xl border border-[var(--accent)]/30 bg-black p-4 md:p-6 shadow-xl max-h-[85vh] md:max-h-[80vh] overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="absolute -inset-px rounded-t-2xl md:rounded-xl pointer-events-none" style={{ boxShadow: "0 0 120px 30px rgba(220,38,38,0.08) inset" }} />
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold tracking-wide">Store</h2>
+          <h2 id="store-title" className="text-lg font-semibold tracking-wide">Store</h2>
           <button className="h-9 px-3 rounded-md border border-[var(--accent)] text-[var(--accent)] bg-black hover:bg-[#7f1d1d]/60 transition-colors" onClick={() => router.back()}>Close</button>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

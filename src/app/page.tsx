@@ -23,11 +23,11 @@ export default function Home() {
         <p className="text-balance leading-relaxed text-lg md:text-xl lg:text-2xl max-w-3xl">
           To redefine streetwear through the lens of recovery — bold, unapologetic, and born from the struggle. Dopesick Apparel stands for the ones who turned their pain into purpose.
         </p>
-        <div className="flex items-center gap-4">
-          <Link href="/store" className="inline-flex h-11 px-6 items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium tracking-wide hover:opacity-90 transition-opacity">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
+          <Link href="/store" className="inline-flex h-10 md:h-11 px-4 md:px-6 items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:opacity-90 transition-opacity">
             Shop the Collection
           </Link>
-          <a href="#story" className="inline-flex h-11 px-6 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] font-medium tracking-wide hover:bg-[color-mix(in_srgb,var(--accent)_10%,transparent)] transition-colors">
+          <a href="#story" className="inline-flex h-10 md:h-11 px-4 md:px-6 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:bg-[color-mix(in_srgb,var(--accent)_10%,transparent)] transition-colors">
             Our Story
           </a>
         </div>
@@ -71,6 +71,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <FooterCredit />
     </main>
+  );
+}
+
+function FooterCredit() {
+  return (
+    <footer className="w-full border-t border-white/10">
+      <div className="mx-auto max-w-6xl px-6 md:px-10 py-8 flex items-center justify-center gap-3">
+        <a href="https://www.setfreedigitaldisciples.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm">
+          <Image src="/set-free-digital-disciples-portal-jesus.png" alt="Set Free Digital Disciples" width={90} height={90} />
+          <span>Website designed by Set Free Digital Disciples</span>
+        </a>
+      </div>
+    </footer>
   );
 }
