@@ -31,6 +31,12 @@ export default function Home() {
             Our Story
           </Link>
         </div>
+        <div className="mt-4 flex flex-col items-center gap-2">
+          <span className="text-sm text-white/80">Looking for recovery?</span>
+          <Link href="/intake" className="inline-flex h-10 md:h-11 px-4 md:px-6 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:bg-[color-mix(in_srgb,var(--accent)_10%,transparent)] transition-colors">
+            Start Intake
+          </Link>
+        </div>
       </section>
       <section id="contact" className="z-10 w-full mt-24 border-t border-white/10">
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-12 grid gap-4 md:grid-cols-2">
