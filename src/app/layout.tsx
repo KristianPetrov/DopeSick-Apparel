@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import MobileMenu from "@/components/MobileMenu";
+import Providers from "./providers";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -57,34 +58,37 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="sticky top-0 z-50 w-full border-b border-[var(--accent)]/40" style={{ backgroundColor: "#7f1d1d" }}>
-          <nav className="mx-auto max-w-6xl px-6 md:px-10 h-16 flex items-center justify-between">
-            <Link href="/" aria-label="Home" className="inline-flex items-center">
-              <Image
-                src="/DopeSick-White-Logo.png"
-                alt="Dopesick Apparel"
-                width={120}
-                height={120}
-                sizes="40px"
-                quality={100}
-                priority
-                className="h-10 w-auto"
-              />
-            </Link>
-            <div className="flex items-center gap-3">
-              <div className="hidden md:flex items-center gap-3">
-                <Link className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/store">Shop</Link>
-                <Link className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/#story">Our Story</Link>
-                <Link
-                 className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/#contact">Contact</Link>
+        <Providers>
+          <header className="sticky top-0 z-50 w-full border-b border-[var(--accent)]/40" style={{ backgroundColor: "#7f1d1d" }}>
+            <nav className="mx-auto max-w-6xl px-6 md:px-10 h-16 flex items-center justify-between">
+              <Link href="/" aria-label="Home" className="inline-flex items-center">
+                <Image
+                  src="/DopeSick-White-Logo.png"
+                  alt="Dopesick Apparel"
+                  width={120}
+                  height={120}
+                  sizes="40px"
+                  quality={100}
+                  priority
+                  className="h-10 w-auto"
+                />
+              </Link>
+              <div className="flex items-center gap-3">
+                <div className="hidden md:flex items-center gap-3">
+                  <Link className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/store">Shop</Link>
+                  <Link className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/#story">Our Story</Link>
+                  <Link
+                    className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/#contact">Contact</Link>
+                  <Link className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/login">Login</Link>
+                </div>
+                <MobileMenu />
               </div>
-              <MobileMenu />
-            </div>
-          </nav>
-        </header>
-        {children}
-        {store}
-        {modal}
+            </nav>
+          </header>
+          {children}
+          {store}
+          {modal}
+        </Providers>
       </body>
     </html>
   );

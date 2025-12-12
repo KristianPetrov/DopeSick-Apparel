@@ -76,6 +76,27 @@ export default function MobileMenu() {
                 Shop
               </Link>
               <Link
+                href="/login"
+                onClick={closeMenu}
+                className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+              >
+                Login
+              </Link>
+              <Link
+                href="/register"
+                onClick={closeMenu}
+                className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+              >
+                Create Account
+              </Link>
+              <Link
+                href="/admin"
+                onClick={closeMenu}
+                className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+              >
+                Admin
+              </Link>
+              <Link
                 href="/#story"
                 onClick={closeMenu}
                 className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"

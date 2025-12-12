@@ -9,7 +9,6 @@ export default function ProductPage({ params }: PageProps) {
   const { id } = params;
   const product = getMockProduct(id);
 
-  const newLocal = "inline-flex h-11 px-6 items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium tracking-wide hover:opacity-90 transition-opacity";
   return (
     <main className="mx-auto max-w-5xl px-6 md:px-10 py-10 grid gap-8 md:grid-cols-2">
       <div className="aspect-square rounded-xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent relative overflow-hidden">
@@ -23,7 +22,12 @@ export default function ProductPage({ params }: PageProps) {
           This is a placeholder product description for {product.name}. Showcase features, materials, sizing, and your brand story.
         </p>
         <div className="mt-6 flex items-center gap-3">
-          <button className={newLocal}>Add to Cart</button>
+          <Link
+            href={`/store/checkout?product=${encodeURIComponent(id)}`}
+            className="inline-flex h-11 px-6 items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium tracking-wide hover:opacity-90 transition-opacity"
+          >
+            Checkout
+          </Link>
           <Link href="/store" className="inline-flex h-11 px-6 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] hover:bg-[#7f1d1d]/60 transition-colors">Keep Shopping</Link>
         </div>
       </div>

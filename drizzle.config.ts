@@ -8,10 +8,9 @@ loadEnv({ path: ".env" });
 export default defineConfig({
   schema: "./src/db/schema.ts",
   out: "./drizzle",
-  dialect: "sqlite",
+  dialect: "postgresql",
   dbCredentials: {
-    url: process.env.TURSO_DATABASE_URL!,
-    token: process.env.TURSO_AUTH_TOKEN,
+    url: process.env.DATABASE_URL!,
   },
   strict: true,
   verbose: true,
