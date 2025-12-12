@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { getServerSession } from "next-auth";
 import { Geist, Geist_Mono } from "next/font/google";
 import MobileMenu from "@/components/MobileMenu";
+import { authOptions } from "@/lib/auth";
 import Providers from "./providers";
 import "./globals.css";
 
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   store,
   modal,
@@ -53,6 +55,13 @@ export default function RootLayout({
   store: React.ReactNode;
   modal: React.ReactNode;
 }>) {
+  const session = await getServerSession(authOptions);
+  const authLink =
+    session?.user?.role === "admin"
+      ? { href: "/admin", label: "Admin" }
+      : session
+        ? { href: "/account", label: "Account" }
+        : null;
   return (
     <html lang="en">
       <body
@@ -79,7 +88,16 @@ export default function RootLayout({
                   <Link className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/#story">Our Story</Link>
                   <Link
                     className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/#contact">Contact</Link>
-                  <Link className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/login">Login</Link>
+                  {authLink ? (
+                    <Link
+                      className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200"
+                      href={authLink.href}
+                    >
+                      {authLink.label}
+                    </Link>
+                  ) : (
+                    <Link className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/login">Login</Link>
+                  )}
                 </div>
                 <MobileMenu />
               </div>

@@ -2,9 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const { data: session, status } = useSession();
+  const isAuthed = status === "authenticated";
+  const role = session?.user?.role;
 
   // Close on ESC
   useEffect(() => {
@@ -75,27 +79,32 @@ export default function MobileMenu() {
               >
                 Shop
               </Link>
-              <Link
-                href="/login"
-                onClick={closeMenu}
-                className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
-              >
-                Login
-              </Link>
-              <Link
-                href="/register"
-                onClick={closeMenu}
-                className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
-              >
-                Create Account
-              </Link>
-              <Link
-                href="/admin"
-                onClick={closeMenu}
-                className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
-              >
-                Admin
-              </Link>
+              {isAuthed ? (
+                <Link
+                  href={role === "admin" ? "/admin" : "/account"}
+                  onClick={closeMenu}
+                  className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                >
+                  {role === "admin" ? "Admin" : "Account"}
+                </Link>
+              ) : (
+                <>
+                  <Link
+                    href="/login"
+                    onClick={closeMenu}
+                    className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    href="/register"
+                    onClick={closeMenu}
+                    className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                  >
+                    Create Account
+                  </Link>
+                </>
+              )}
               <Link
                 href="/#story"
                 onClick={closeMenu}

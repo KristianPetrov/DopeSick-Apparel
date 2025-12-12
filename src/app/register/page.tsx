@@ -42,7 +42,7 @@ export default function RegisterPage() {
       }
 
       await signIn("credentials", { email, password, redirect: false });
-      router.push("/");
+      router.push("/account");
       router.refresh();
     } finally {
       setSubmitting(false);
