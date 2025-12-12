@@ -20,6 +20,24 @@ export default function Home() {
             className="relative z-[1]"
           />
         </div>
+        <div className="-mt-2 flex flex-col items-center gap-3">
+          <div className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 py-2">
+            <span className="text-xs md:text-sm font-semibold tracking-[0.22em] text-white/90">
+              REFUSE TO REMAIN ANONYMOUS
+            </span>
+          </div>
+          <div className="max-w-3xl text-center text-white/80">
+            <p className="text-base md:text-lg font-semibold tracking-wide">
+              ⚠️MAKING SOBRIETY A TREND THRU FASHION ⚠️
+            </p>
+            <p className="mt-1 text-sm md:text-base">
+              We are the New Gen Sober People
+            </p>
+            <p className="mt-1 text-sm md:text-base font-semibold text-white/90">
+              We Refuse to Remain Anonymous💥NON-ANON
+            </p>
+          </div>
+        </div>
         <p className="text-balance leading-relaxed text-lg md:text-xl lg:text-2xl max-w-3xl">
           To redefine streetwear through the lens of recovery — bold, unapologetic, and born from the struggle. Dopesick Apparel stands for the ones who turned their pain into purpose.
         </p>
