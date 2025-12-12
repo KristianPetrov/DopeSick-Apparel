@@ -1,15 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { formatMoney, getProductById } from "@/lib/products";
 import ProductPurchase from "@/components/cart/ProductPurchase";
+import { useParams } from "next/navigation";
 
-type PageProps = {
-  params: Promise<{ id: string }>;
-};
-
-export default async function ProductPage({ params }: PageProps) {
-  const { id } = await params;
-  const product = getProductById(id);
+export default function ProductPage() {
+  const params = useParams<{ id?: string | string[] }>();
+  const idRaw = params?.id;
+  const id = Array.isArray(idRaw) ? idRaw[0] : idRaw;
+  const product = getProductById(String(id ?? ""));
 
   return (
     <main className="mx-auto max-w-5xl px-6 md:px-10 py-10 grid gap-8 md:grid-cols-2">
@@ -27,11 +28,11 @@ export default async function ProductPage({ params }: PageProps) {
         <div className="mt-6 flex flex-col sm:flex-row sm:items-end gap-3">
           <div className="w-full sm:max-w-xs">
             <ProductPurchase
-              productId={id}
+              productId={String(id ?? "")}
               buttonClassName="inline-flex h-11 w-full px-6 items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium tracking-wide hover:opacity-90 transition-opacity"
             />
           </div>
-         
+
         </div>
       </div>
     </main>
