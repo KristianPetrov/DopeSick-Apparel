@@ -31,12 +31,29 @@ export default function Home() {
             Our Story
           </Link>
         </div>
-        <div className="mt-4 flex flex-col items-center gap-2">
-          <span className="text-sm text-white/80">Looking for recovery?</span>
-          <Link href="/intake" className="inline-flex h-10 md:h-11 px-4 md:px-6 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:bg-[color-mix(in_srgb,var(--accent)_10%,transparent)] transition-colors">
-            Start Intake
-          </Link>
-        </div>
+        <section
+          aria-label="Recovery intake call to action"
+          className="mt-6 w-full max-w-3xl rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm px-6 py-6 md:px-8 md:py-7 text-left"
+        >
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+            <div className="space-y-2">
+              <h2 className="text-lg md:text-xl font-semibold tracking-wide text-white">
+                Looking for a recovery program?
+              </h2>
+              <p className="text-sm md:text-base leading-relaxed text-white/75">
+                If you or someone you love is ready for help, take our intake form and we’ll connect you with the best recovery center for your needs.
+              </p>
+            </div>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/intake"
+                className="inline-flex h-11 md:h-12 px-5 md:px-7 items-center justify-center rounded-full bg-[var(--accent)] text-black font-semibold text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:opacity-90 transition-opacity"
+              >
+                Take the Intake Form
+              </Link>
+            </div>
+          </div>
+        </section>
       </section>
       <section id="contact" className="z-10 w-full mt-24 border-t border-white/10">
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-12 grid gap-4 md:grid-cols-2">
