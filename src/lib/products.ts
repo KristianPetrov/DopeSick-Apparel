@@ -28,12 +28,12 @@ export const PRODUCTS: Product[] = [
     image: "/look-mom-im-sober-hoodie-blk.png",
     priceCents: 6500,
   },
-  { id: "tee-1", name: "Signature Tee", tag: "T-Shirt", image: "/og.png", priceCents: 3500 },
-  { id: "hoodie-1", name: "Recovery Hoodie", tag: "Hoodie", image: "/og.png", priceCents: 6000 },
-  { id: "tank-1", name: "Grit Tank", tag: "Tank Top", image: "/og.png", priceCents: 3000 },
-  { id: "tee-2", name: "Unapologetic Tee", tag: "T-Shirt", image: "/og.png", priceCents: 3500 },
-  { id: "hoodie-2", name: "Rise Hoodie", tag: "Hoodie", image: "/og.png", priceCents: 6000 },
-  { id: "tank-2", name: "Purpose Tank", tag: "Tank Top", image: "/og.png", priceCents: 3000 },
+  // { id: "tee-1", name: "Signature Tee", tag: "T-Shirt", image: "/og.png", priceCents: 3500 },
+  // { id: "hoodie-1", name: "Recovery Hoodie", tag: "Hoodie", image: "/og.png", priceCents: 6000 },
+  // { id: "tank-1", name: "Grit Tank", tag: "Tank Top", image: "/og.png", priceCents: 3000 },
+  // { id: "tee-2", name: "Unapologetic Tee", tag: "T-Shirt", image: "/og.png", priceCents: 3500 },
+  // { id: "hoodie-2", name: "Rise Hoodie", tag: "Hoodie", image: "/og.png", priceCents: 6000 },
+  // { id: "tank-2", name: "Purpose Tank", tag: "Tank Top", image: "/og.png", priceCents: 3000 },
 ];
 
 export function getProductById (id: string): Product
