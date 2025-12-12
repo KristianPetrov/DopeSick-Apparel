@@ -3,10 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { getSession, signIn } from "next-auth/react";
 
 export default function LoginPage() {
   const router = useRouter();
+  const sp = useSearchParams();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -32,7 +34,8 @@ export default function LoginPage() {
       if (session?.user?.role === "admin") {
         router.push("/admin");
       } else {
-        router.push("/account");
+        const next = sp.get("next");
+        router.push(next || "/account");
       }
       router.refresh();
     } finally {

@@ -1,16 +1,17 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect } from "react";
 import Image from "next/image";
+import { getProductById } from "@/lib/products";
+import ProductPurchase from "@/components/cart/ProductPurchase";
 
-type PageProps = {
-  params: { id: string };
-};
-
-export default function ProductOverlay({ params }: PageProps) {
+export default function ProductOverlay() {
   const router = useRouter();
-  const product = getMockProduct(params.id);
+  const params = useParams<{ id?: string | string[] }>();
+  const idRaw = params?.id;
+  const id = Array.isArray(idRaw) ? idRaw[0] : idRaw;
+  const product = getProductById(String(id ?? ""));
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -42,11 +43,15 @@ export default function ProductOverlay({ params }: PageProps) {
             <div className="min-w-0">
               <div className="text-sm text-white/60">{product.tag}</div>
               <p className="mt-4 text-white/80 leading-relaxed">
-                Quick view for {product.name}. For full details and checkout, open the product page.
+                Quick view for {product.name}.
               </p>
               <div className="mt-6 flex items-center gap-3">
-                <button className="inline-flex h-10 px-4 items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium hover:opacity-90 transition-opacity">Add to Cart</button>
-                <button className="inline-flex h-10 px-4 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] hover:bg-[#7f1d1d]/60 transition-colors" onClick={() => router.push(`/store/${params.id}`)}>Open Product</button>
+                <div className="w-full max-w-xs">
+                  <ProductPurchase
+                    productId={String(id ?? "")}
+                    buttonClassName="inline-flex h-10 w-full px-4 items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium hover:opacity-90 transition-opacity"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -54,24 +59,6 @@ export default function ProductOverlay({ params }: PageProps) {
       </div>
     </div>
   );
-}
-
-function getMockProduct(id: string) {
-  const map: Record<string, { name: string; tag: string; image: string }> = {
-    "look-dad-im-clean-hoodie-blk": { name: "Look Dad I'm Clean DopeSick Hoodie Black", tag: "Hoodie", image: "/look-dad-im-clean-hoodie-blk.png" },
-    "look-dad-im-sober-hoodie-blk": { name: "Look Dad I'm Sober DopeSick Hoodie Black", tag: "Hoodie", image: "/look-dad-im-sober-hoodie-blk.png" },
-    "look-mom-im-sober-hoodie-blk": { name: "Look Mom I'm Sober DopeSick Hoodie Black", tag: "Hoodie", image: "/look-mom-im-sober-hoodie-blk.png" },
-    "tee-1": { name: "Signature Tee", tag: "T-Shirt", image: "/og.png" },
-    "hoodie-1": { name: "Recovery Hoodie", tag: "Hoodie", image: "/og.png" },
-    "tank-1": { name: "Grit Tank", tag: "Tank Top", image: "/og.png" },
-    "tee-2": { name: "Unapologetic Tee", tag: "T-Shirt", image: "/og.png" },
-    "hoodie-2": { name: "Rise Hoodie", tag: "Hoodie", image: "/og.png" },
-    "tank-2": { name: "Purpose Tank", tag: "Tank Top", image: "/og.png" },
-    "tee-hero": { name: "Signature Tee", tag: "T-Shirt", image: "/og.png" },
-    "hoodie-hero": { name: "Recovery Hoodie", tag: "Hoodie", image: "/og.png" },
-    "tank-hero": { name: "Grit Tank", tag: "Tank Top", image: "/og.png" },
-  };
-  return map[id] ?? { name: `Product ${id}`, tag: "Apparel", image: "/og.png" };
 }
 
 

@@ -3,10 +3,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 
 export default function RegisterPage() {
   const router = useRouter();
+  const sp = useSearchParams();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -42,7 +44,8 @@ export default function RegisterPage() {
       }
 
       await signIn("credentials", { email, password, redirect: false });
-      router.push("/account");
+      const next = sp.get("next");
+      router.push(next || "/account");
       router.refresh();
     } finally {
       setSubmitting(false);
