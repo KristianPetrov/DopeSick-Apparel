@@ -38,12 +38,15 @@ export const metadata: Metadata = {
       },
     ],
   },
-  themeColor: "#000000",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
+};
+
+export const viewport = {
+  themeColor: "#000000",
 };
 
 export default async function RootLayout({

@@ -41,6 +41,7 @@ export default async function AdminIntakesPage() {
               <th className="px-3 py-3 text-left font-medium">Primary substance</th>
               <th className="px-3 py-3 text-left font-medium">Frequency</th>
               <th className="px-3 py-3 text-left font-medium">Duration</th>
+              <th className="px-3 py-3 text-left font-medium">Details</th>
             </tr>
           </thead>
           <tbody>
@@ -50,7 +51,12 @@ export default async function AdminIntakesPage() {
                   {typeof r.createdAt === "string" ? r.createdAt : r.createdAt.toISOString()}
                 </td>
                 <td className="px-3 py-3 whitespace-nowrap">
-                  {r.firstName} {r.lastName}
+                  <Link
+                    href={`/admin/intakes/${r.id}`}
+                    className="text-white hover:text-[var(--accent)] hover:underline transition-colors"
+                  >
+                    {r.firstName} {r.lastName}
+                  </Link>
                 </td>
                 <td className="px-3 py-3 whitespace-nowrap text-white/80">
                   {String(r.dateOfBirth)}
@@ -60,11 +66,19 @@ export default async function AdminIntakesPage() {
                 <td className="px-3 py-3 whitespace-nowrap text-white/80">{r.primarySubstance}</td>
                 <td className="px-3 py-3 whitespace-nowrap text-white/80">{r.frequency}</td>
                 <td className="px-3 py-3 whitespace-nowrap text-white/80">{r.duration}</td>
+                <td className="px-3 py-3 whitespace-nowrap">
+                  <Link
+                    href={`/admin/intakes/${r.id}`}
+                    className="inline-flex h-9 px-3 items-center justify-center rounded-full border border-white/20 text-white/80 hover:text-white hover:border-[var(--accent)]/60 hover:bg-white/5 transition-colors"
+                  >
+                    View
+                  </Link>
+                </td>
               </tr>
             ))}
             {rows.length === 0 && (
               <tr>
-                <td className="px-3 py-6 text-white/70" colSpan={8}>
+                <td className="px-3 py-6 text-white/70" colSpan={9}>
                   No intake submissions yet.
                 </td>
               </tr>
