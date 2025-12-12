@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { PRODUCTS } from "@/lib/products";
+import FeaturedProductOpener from "./FeaturedProductOpener";
 export default function StorePage() {
   return (
     <main className="mx-auto max-w-6xl px-6 md:px-10 py-12">
+      <FeaturedProductOpener />
       <h1 className="text-2xl font-semibold tracking-wide mb-6">Store</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
         {PRODUCTS.map((p) => (

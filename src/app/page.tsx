@@ -97,7 +97,7 @@ export default function Home() {
               { id: 'look-dad-im-sober-hoodie-blk', name: "Look Dad I'm Sober DopeSick Hoodie Black", tag: 'Hoodie', image: '/look-dad-im-sober-hoodie-blk.png' },
               { id: 'look-mom-im-sober-hoodie-blk', name: "Look Mom I'm Sober DopeSick Hoodie Black", tag: 'Hoodie', image: '/look-mom-im-sober-hoodie-blk.png' },
             ].map((p) => (
-              <Link key={p.id} href={`/store/${p.id}`} className="group block">
+              <Link key={p.id} href={`/store?featured=${encodeURIComponent(p.id)}`} className="group block">
                 <div className="aspect-[3/4] rounded-xl border border-white/10 group-hover:border-[var(--accent)]/50 transition-colors relative overflow-hidden">
                   <Image src={p.image} alt={p.name} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
                   <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent">

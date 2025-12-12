@@ -22,7 +22,7 @@ export default async function ProductPage({ params }: PageProps) {
         <div className="mt-1 text-sm text-white/60">{product.tag}</div>
         <div className="mt-3 text-base text-white/85 font-medium">{formatMoney(product.priceCents)}</div>
         <p className="mt-6 text-white/80 leading-relaxed">
-          This is a placeholder product description for {product.name}. Showcase features, materials, sizing, and your brand story.
+          {product.name}.
         </p>
         <div className="mt-6 flex flex-col sm:flex-row sm:items-end gap-3">
           <div className="w-full sm:max-w-xs">
@@ -31,7 +31,7 @@ export default async function ProductPage({ params }: PageProps) {
               buttonClassName="inline-flex h-11 w-full px-6 items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium tracking-wide hover:opacity-90 transition-opacity"
             />
           </div>
-          <Link href="/store" className="inline-flex h-11 px-6 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] hover:bg-[#7f1d1d]/60 transition-colors">Keep Shopping</Link>
+         
         </div>
       </div>
     </main>
