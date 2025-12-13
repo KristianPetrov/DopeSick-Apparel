@@ -79,6 +79,13 @@ export default function MobileMenu() {
               >
                 Shop
               </Link>
+              <Link
+                href="/get-listed"
+                onClick={closeMenu}
+                className="inline-flex h-11 px-4 items-center justify-center rounded-full bg-white text-[var(--accent)] hover:bg-[var(--accent)] hover:text-black transition-colors"
+              >
+                GET LISTED
+              </Link>
               {isAuthed ? (
                 <Link
                   href={role === "admin" ? "/admin" : "/account"}

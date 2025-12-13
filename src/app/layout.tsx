@@ -91,6 +91,12 @@ export default async function RootLayout({
                   <Link className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/#story">Our Story</Link>
                   <Link
                     className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/#contact">Contact</Link>
+                  <Link
+                    className="inline-flex h-9 px-4 items-center justify-center rounded-full bg-white text-[var(--accent)] hover:bg-[var(--accent)] hover:text-black shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200"
+                    href="/get-listed"
+                  >
+                    GET LISTED
+                  </Link>
                   {authLink ? (
                     <Link
                       className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200"

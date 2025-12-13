@@ -104,3 +104,48 @@ export const orders = pgTable(
 export type Order = typeof orders.$inferSelect;
 export type NewOrder = typeof orders.$inferInsert;
 
+export const providerApplications = pgTable(
+  "provider_applications",
+  {
+    id: serial("id").primaryKey(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+
+    // Organization
+    organizationName: text("organization_name").notNull(),
+    organizationType: text("organization_type").notNull(), // detox | rehab | sober_living | outpatient | other
+    website: text("website"),
+
+    // Contact
+    contactName: text("contact_name").notNull(),
+    contactTitle: text("contact_title"),
+    contactEmail: text("contact_email").notNull(),
+    contactPhone: text("contact_phone"),
+
+    // Location
+    address1: text("address1"),
+    address2: text("address2"),
+    city: text("city"),
+    state: text("state"),
+    zip: text("zip"),
+
+    // Program details
+    services: text("services"),
+    levelsOfCare: text("levels_of_care"),
+    acceptsInsurance: boolean("accepts_insurance").notNull().default(false),
+    notes: text("notes"),
+
+    // Meta
+    status: text("status").notNull().default("new"), // new | reviewed | contacted | approved | rejected
+    agreeToContact: boolean("agree_to_contact").notNull(),
+    submittedAt: text("submitted_at"),
+  },
+  (t) => ({
+    createdAtIdx: index("provider_applications_created_at_idx").on(t.createdAt),
+    contactEmailIdx: index("provider_applications_contact_email_idx").on(t.contactEmail),
+    statusIdx: index("provider_applications_status_idx").on(t.status),
+  }),
+);
+
+export type ProviderApplication = typeof providerApplications.$inferSelect;
+export type NewProviderApplication = typeof providerApplications.$inferInsert;
+

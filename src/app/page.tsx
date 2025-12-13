@@ -42,11 +42,17 @@ export default function Home() {
           To redefine streetwear through the lens of recovery — bold, unapologetic, and born from the struggle. Dopesick Apparel stands for the ones who turned their pain into purpose.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
-          <Link href="/store" className="inline-flex h-10 md:h-11 px-4 md:px-6 items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:opacity-90 transition-opacity">
-            Shop the Collection
+          <Link
+            href="/get-listed"
+            className="inline-flex h-10 md:h-11 px-4 md:px-6 items-center justify-center rounded-full bg-white text-black font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:opacity-90 transition-opacity"
+          >
+            GET LISTED
           </Link>
-          <Link href="#story" className="inline-flex h-10 md:h-11 px-4 md:px-6 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:bg-[color-mix(in_srgb,var(--accent)_10%,transparent)] transition-colors">
-            Our Story
+          <Link
+            href="/intake"
+            className="inline-flex h-10 md:h-11 px-4 md:px-6 items-center justify-center rounded-full bg-white text-black font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:opacity-90 transition-opacity"
+          >
+            GET SOBER
           </Link>
         </div>
         <section
@@ -68,6 +74,12 @@ export default function Home() {
                 className="inline-flex h-11 md:h-12 px-5 md:px-7 items-center justify-center rounded-full bg-[var(--accent)] text-black font-semibold text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:opacity-90 transition-opacity"
               >
                 Take the Intake Form
+              </Link>
+              <Link
+                href="/get-listed"
+                className="inline-flex h-11 md:h-12 px-5 md:px-7 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] font-semibold text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:bg-[color-mix(in_srgb,var(--accent)_10%,transparent)] transition-colors"
+              >
+                Get Listed
               </Link>
             </div>
           </div>

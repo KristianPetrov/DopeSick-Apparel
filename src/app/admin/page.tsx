@@ -28,6 +28,13 @@ export default async function AdminHomePage() {
           <div className="font-medium">Orders</div>
           <div className="mt-1 text-sm text-white/60">Browse all orders.</div>
         </Link>
+        <Link
+          href="/admin/provider-applications"
+          className="rounded-xl border border-white/10 bg-black/40 p-5 hover:border-[var(--accent)]/50 transition-colors"
+        >
+          <div className="font-medium">Provider applications</div>
+          <div className="mt-1 text-sm text-white/60">Browse all provider applications.</div>
+        </Link>
       </div>
     </main>
   );
