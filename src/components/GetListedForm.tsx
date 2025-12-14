@@ -96,7 +96,7 @@ export default function GetListedForm() {
     <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
       <div className="space-y-1">
         <h2 className="text-xl font-semibold tracking-wide">Get Listed</h2>
-        <p className="text-sm text-white/75">
+        <p className="text-sm text-black/75">
           Detox, rehab, outpatient, and sober livings can apply to be listed. Fields marked * are required.
         </p>
       </div>
@@ -151,7 +151,7 @@ export default function GetListedForm() {
             checked={data.acceptsInsurance}
             onChange={(e) => update("acceptsInsurance", e.target.checked)}
           />
-          <label htmlFor="acceptsInsurance" className="text-sm text-white/90">
+          <label htmlFor="acceptsInsurance" className="text-sm text-black/90">
             We accept insurance
           </label>
         </div>
@@ -177,7 +177,7 @@ export default function GetListedForm() {
         <button
           type="button"
           disabled={!canSubmit || submitting}
-          className="inline-flex h-11 px-6 items-center justify-center rounded-full bg-[var(--accent)] text-black font-semibold disabled:opacity-60"
+          className="inline-flex h-11 px-6 items-center justify-center bg-[var(--accent)] text-black font-semibold disabled:opacity-60 border border-black"
           onClick={onSubmit}
         >
           {submitting ? "Submitting..." : "Submit"}
@@ -206,7 +206,7 @@ function Input({
 }) {
   return (
     <label className={`flex flex-col gap-1 ${className ?? ""}`}>
-      <span className="text-sm text-white/90">
+      <span className="text-sm text-black/90">
         {label}
         {required ? " *" : ""}
       </span>
@@ -216,7 +216,7 @@ function Input({
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="h-10 rounded-md bg-black border border-white/20 px-3 outline-none focus:border-[var(--accent)]"
+        className="h-10 bg-white border border-black/20 px-3 outline-none focus:border-[var(--accent)]"
       />
     </label>
   );
@@ -237,13 +237,13 @@ function Textarea({
 }) {
   return (
     <label className={`flex flex-col gap-1 ${className ?? ""}`}>
-      <span className="text-sm text-white/90">{label}</span>
+      <span className="text-sm text-black/90">{label}</span>
       <textarea
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
         rows={3}
-        className="rounded-md bg-black border border-white/20 px-3 py-2 outline-none focus:border-[var(--accent)]"
+        className="bg-white border border-black/20 px-3 py-2 outline-none focus:border-[var(--accent)]"
       />
     </label>
   );
@@ -264,7 +264,7 @@ function Select({
 }) {
   return (
     <label className="flex flex-col gap-1">
-      <span className="text-sm text-white/90">
+      <span className="text-sm text-black/90">
         {label}
         {required ? " *" : ""}
       </span>
@@ -272,7 +272,7 @@ function Select({
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="h-10 rounded-md bg-black border border-white/20 px-3 outline-none focus:border-[var(--accent)]"
+        className="h-10 bg-white border border-black/20 px-3 outline-none focus:border-[var(--accent)]"
       >
         <option value="">Select...</option>
         {options.map((opt) => (
@@ -301,5 +301,7 @@ function Checkbox({
     </label>
   );
 }
+
+
 
 

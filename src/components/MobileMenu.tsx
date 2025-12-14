@@ -41,7 +41,7 @@ export default function MobileMenu() {
         aria-label="Toggle menu"
         aria-expanded={isOpen}
         aria-controls="mobile-menu-panel"
-        className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white text-white hover:bg-white hover:text-[var(--accent)] transition-colors"
+        className="inline-flex h-11 w-11 items-center justify-center border border-black text-black hover:bg-black hover:text-white transition-colors"
         onClick={() => setIsOpen((v) => !v)}
       >
         {isOpen ? (
@@ -69,20 +69,20 @@ export default function MobileMenu() {
             id="mobile-menu-panel"
             role="dialog"
             aria-modal="true"
-            className="fixed top-16 inset-x-0 z-50 bg-[#7f1d1d] border-t border-[var(--accent)]/40"
+            className="fixed top-16 inset-x-0 z-50 bg-white border-t border-[var(--accent)]/40"
           >
             <nav className="px-6 py-4 flex flex-col gap-3">
               <Link
                 href="/store"
                 onClick={closeMenu}
-                className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] transition-colors"
               >
                 Shop
               </Link>
               <Link
                 href="/get-listed"
                 onClick={closeMenu}
-                className="inline-flex h-11 px-4 items-center justify-center rounded-full bg-white text-[var(--accent)] hover:bg-[var(--accent)] hover:text-black transition-colors"
+                className="inline-flex h-11 px-4 items-center justify-center bg-[var(--accent)] text-black hover:bg-[var(--accent)] hover:text-white transition-colors border border-black"
               >
                 GET LISTED
               </Link>
@@ -90,7 +90,7 @@ export default function MobileMenu() {
                 <Link
                   href={role === "admin" ? "/admin" : "/account"}
                   onClick={closeMenu}
-                  className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                  className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] transition-colors"
                 >
                   {role === "admin" ? "Admin" : "Account"}
                 </Link>
@@ -99,30 +99,30 @@ export default function MobileMenu() {
                   <Link
                     href="/login"
                     onClick={closeMenu}
-                    className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                    className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] transition-colors"
                   >
                     Login
                   </Link>
                   <Link
                     href="/register"
                     onClick={closeMenu}
-                    className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                    className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] transition-colors"
                   >
                     Create Account
                   </Link>
                 </>
               )}
               <Link
-                href="/#story"
+                href="/about"
                 onClick={closeMenu}
-                className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] transition-colors"
               >
                 Our Story
               </Link>
               <Link
                 href="/#contact"
                 onClick={closeMenu}
-                className="inline-flex h-11 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+                className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] transition-colors"
               >
                 Contact
               </Link>

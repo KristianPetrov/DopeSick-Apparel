@@ -177,11 +177,11 @@ export default function IntakeForm({ onCancel, onSubmitted }: IntakeFormProps) {
     return (
       <div className="p-4 sm:p-6">
         <h2 className="text-xl font-semibold">Thank you</h2>
-        <p className="text-sm text-white/80 mt-2">Your intake was submitted. A coordinator will contact you shortly.</p>
+        <p className="text-sm text-black/80 mt-2">Your intake was submitted. A coordinator will contact you shortly.</p>
         <div className="mt-6 flex gap-3">
           <button
             type="button"
-            className="inline-flex h-10 px-4 items-center justify-center rounded-md bg-[var(--accent)] text-black"
+            className="inline-flex h-11 px-4 items-center justify-center bg-[var(--accent)] text-black border border-black"
             onClick={onCancel}
           >
             Close
@@ -195,14 +195,14 @@ export default function IntakeForm({ onCancel, onSubmitted }: IntakeFormProps) {
     <div className="w-full max-w-2xl">
       <div className="px-4 sm:px-6 pt-4">
         <h2 className="text-2xl font-semibold">Recovery Intake</h2>
-        <p className="text-white/70 text-sm mt-1">Answer a few questions to get started. It takes ~5-8 minutes.</p>
-        <div className="mt-4 h-2 w-full rounded-full bg-white/10 overflow-hidden">
+        <p className="text-black/70 text-sm mt-1">Answer a few questions to get started. It takes ~5-8 minutes.</p>
+        <div className="mt-4 h-2 w-full bg-black/10 overflow-hidden">
           <div
             className="h-full bg-[var(--accent)] transition-all"
             style={{ width: `${((step + 1) / totalSteps) * 100}%` }}
           />
         </div>
-        <p className="text-xs text-white/60 mt-1">Step {step + 1} of {totalSteps}</p>
+        <p className="text-xs text-black/60 mt-1">Step {step + 1} of {totalSteps}</p>
       </div>
 
       <div className="p-4 sm:p-6 space-y-6">
@@ -294,7 +294,7 @@ export default function IntakeForm({ onCancel, onSubmitted }: IntakeFormProps) {
       <div className="px-4 sm:px-6 pb-4 sm:pb-6 flex items-center justify-between gap-3">
         <button
           type="button"
-          className="inline-flex h-10 px-4 items-center justify-center rounded-md border border-white/30 text-white hover:bg-white/10"
+          className="inline-flex h-11 px-4 items-center justify-center border border-black/30 text-black hover:bg-black/10"
           onClick={step === 0 ? onCancel : prev}
         >
           {step === 0 ? "Cancel" : "Back"}
@@ -304,7 +304,7 @@ export default function IntakeForm({ onCancel, onSubmitted }: IntakeFormProps) {
           <button
             type="button"
             disabled={!canAdvance}
-            className="inline-flex h-10 px-4 items-center justify-center rounded-md bg-[var(--accent)] text-black disabled:opacity-60"
+            className="inline-flex h-11 px-4 items-center justify-center bg-[var(--accent)] text-black disabled:opacity-60 border border-black"
             onClick={next}
           >
             Next
@@ -313,7 +313,7 @@ export default function IntakeForm({ onCancel, onSubmitted }: IntakeFormProps) {
           <button
             type="button"
             disabled={!canAdvance || submitting}
-            className="inline-flex h-10 px-4 items-center justify-center rounded-md bg-[var(--accent)] text-black disabled:opacity-60"
+            className="inline-flex h-11 px-4 items-center justify-center bg-[var(--accent)] text-black disabled:opacity-60 border border-black"
             onClick={onSubmit}
           >
             {submitting ? "Submitting..." : "Submit Intake"}
@@ -327,13 +327,13 @@ export default function IntakeForm({ onCancel, onSubmitted }: IntakeFormProps) {
 function Input({ label, className, value, onChange, type = "text", required }: { label: string; className?: string; value: string; onChange: (v: string) => void; type?: string; required?: boolean; }) {
   return (
     <label className={`flex flex-col gap-1 ${className ?? ""}`}>
-      <span className="text-sm text-white/90">{label}{required ? " *" : ""}</span>
+      <span className="text-sm text-black/90">{label}{required ? " *" : ""}</span>
       <input
         type={type}
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="h-10 rounded-md bg-black border border-white/20 px-3 outline-none focus:border-[var(--accent)]"
+        className="h-10 bg-white border border-black/20 px-3 outline-none focus:border-[var(--accent)]"
       />
     </label>
   );
@@ -342,12 +342,12 @@ function Input({ label, className, value, onChange, type = "text", required }: {
 function Textarea({ label, className, value, onChange }: { label: string; className?: string; value: string; onChange: (v: string) => void; }) {
   return (
     <label className={`flex flex-col gap-1 ${className ?? ""}`}>
-      <span className="text-sm text-white/90">{label}</span>
+      <span className="text-sm text-black/90">{label}</span>
       <textarea
         value={value}
         onChange={(e) => onChange(e.target.value)}
         rows={3}
-        className="rounded-md bg-black border border-white/20 px-3 py-2 outline-none focus:border-[var(--accent)]"
+        className="bg-white border border-black/20 px-3 py-2 outline-none focus:border-[var(--accent)]"
       />
     </label>
   );
@@ -356,12 +356,12 @@ function Textarea({ label, className, value, onChange }: { label: string; classN
 function Select({ label, value, onChange, options, required }: { label: string; value: string; onChange: (v: string) => void; options: string[]; required?: boolean; }) {
   return (
     <label className="flex flex-col gap-1">
-      <span className="text-sm text-white/90">{label}{required ? " *" : ""}</span>
+      <span className="text-sm text-black/90">{label}{required ? " *" : ""}</span>
       <select
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="h-10 rounded-md bg-black border border-white/20 px-3 outline-none focus:border-[var(--accent)]"
+        className="h-10 bg-white border border-black/20 px-3 outline-none focus:border-[var(--accent)]"
       >
         <option value="">Select...</option>
         {options.map((opt) => (

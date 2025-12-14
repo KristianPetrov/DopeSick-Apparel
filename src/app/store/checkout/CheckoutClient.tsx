@@ -94,19 +94,19 @@ export default function CheckoutClient() {
     return (
       <main className="mx-auto max-w-xl px-6 md:px-10 py-12">
         <h1 className="text-2xl font-semibold tracking-wide">Order received</h1>
-        <p className="mt-2 text-sm text-white/70">
+        <p className="mt-2 text-sm text-black/70">
           Thanks — your order was submitted. We&apos;ll reach out via email.
         </p>
         <div className="mt-6 flex gap-3">
           <Link
             href="/store"
-            className="inline-flex h-11 px-6 items-center justify-center rounded-full border border-[var(--accent)] text-[var(--accent)] hover:bg-[#7f1d1d]/60 transition-colors"
+            className="inline-flex h-11 px-6 items-center justify-center border border-[var(--accent)] text-[var(--accent)] hover:bg-[#7f1d1d]/60 transition-colors"
           >
             Back to store
           </Link>
           <Link
             href="/"
-            className="inline-flex h-11 px-6 items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex h-11 px-6 items-center justify-center bg-[var(--accent)] text-black font-medium hover:opacity-90 transition-opacity border border-black"
           >
             Home
           </Link>
@@ -119,69 +119,69 @@ export default function CheckoutClient() {
     <main className="mx-auto max-w-xl px-6 md:px-10 py-12">
       <h1 className="text-2xl font-semibold tracking-wide">Checkout</h1>
       {status !== "authenticated" ? (
-        <div className="mt-3 rounded-xl border border-white/10 bg-white/5 px-5 py-4">
-          <div className="text-sm text-white/80 font-medium">Checkout options</div>
-          <p className="mt-1 text-sm text-white/70">
+        <div className="mt-3 border border-black/10 bg-black/5 px-5 py-4">
+          <div className="text-sm text-black/80 font-medium">Checkout options</div>
+          <p className="mt-1 text-sm text-black/70">
             You can check out as a guest, or sign in / create an account to auto-fill your saved details.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link
               href="/login?next=/store/checkout"
-              className="inline-flex h-10 px-4 items-center justify-center rounded-full border border-white/20 text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+              className="inline-flex h-11 px-4 items-center justify-center border border-black/20 text-black/80 hover:text-black hover:bg-black/10 transition-colors"
             >
               Login
             </Link>
             <Link
               href="/register?next=/store/checkout"
-              className="inline-flex h-10 px-4 items-center justify-center rounded-full border border-white/20 text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+              className="inline-flex h-11 px-4 items-center justify-center border border-black/20 text-black/80 hover:text-black hover:bg-black/10 transition-colors"
             >
               Create account
             </Link>
-            <span className="inline-flex h-10 items-center text-sm text-white/60">
+            <span className="inline-flex h-11 items-center text-sm text-black/60">
               or continue as guest below
             </span>
           </div>
         </div>
       ) : (
-        <p className="mt-2 text-sm text-white/70">
-          Checking out as <span className="text-white/85">{session?.user?.email}</span>
+        <p className="mt-2 text-sm text-black/70">
+          Checking out as <span className="text-black/85">{session?.user?.email}</span>
         </p>
       )}
 
-      <div className="mt-8 rounded-xl border border-white/10 bg-white/5 p-5">
+      <div className="mt-8 border border-black/10 bg-black/5 p-5">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <div className="font-medium">Your cart</div>
-            <div className="text-xs text-white/60">Review items and adjust quantities</div>
+            <div className="font-medium text-black">Your cart</div>
+            <div className="text-xs text-black/60">Review items and adjust quantities</div>
           </div>
-          <div className="text-sm text-white/80">
-            Subtotal: <span className="text-white/95 font-medium">{formatMoney(subtotalCents)}</span>
+          <div className="text-sm text-black/80">
+            Subtotal: <span className="text-black/95 font-medium">{formatMoney(subtotalCents)}</span>
           </div>
         </div>
 
         <div className="mt-4 space-y-3">
           {lines.length === 0 ? (
-            <div className="text-sm text-white/70">
+            <div className="text-sm text-black/70">
               Your cart is empty. <Link href="/store" className="text-[var(--accent)] hover:underline">Go back to store</Link>
             </div>
           ) : (
             lines.map((l) => {
               const p = getProductById(l.productId);
               return (
-                <div key={`${l.productId}:${l.size}`} className="flex items-center justify-between gap-3 rounded-lg border border-white/10 bg-black/20 px-4 py-3">
+                <div key={`${l.productId}:${l.size}`} className="flex items-center justify-between gap-3 border border-black/10 bg-white/20 px-4 py-3">
                   <div className="min-w-0">
-                    <div className="font-medium truncate">{p.name}</div>
-                    <div className="text-xs text-white/60">
+                    <div className="font-medium truncate text-black">{p.name}</div>
+                    <div className="text-xs text-black/60">
                       {p.tag} • Size {(l.size as CartSize) ?? "M"} • {formatMoney(p.priceCents)}
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center rounded-full border border-white/15 bg-black/20">
-                      <button type="button" className="h-9 w-10 text-white/80 hover:text-white" onClick={() => setQty(l.productId, l.size, Math.max(1, l.quantity - 1))}>−</button>
-                      <div className="px-2 text-sm text-white/90 min-w-[2.25rem] text-center">{l.quantity}</div>
-                      <button type="button" className="h-9 w-10 text-white/80 hover:text-white" onClick={() => setQty(l.productId, l.size, l.quantity + 1)}>+</button>
+                    <div className="inline-flex items-center border border-black/15 bg-white/20">
+                      <button type="button" className="h-9 w-10 text-black/80 hover:text-black" onClick={() => setQty(l.productId, l.size, Math.max(1, l.quantity - 1))}>−</button>
+                      <div className="px-2 text-sm text-black/90 min-w-[2.25rem] text-center">{l.quantity}</div>
+                      <button type="button" className="h-9 w-10 text-black/80 hover:text-black" onClick={() => setQty(l.productId, l.size, l.quantity + 1)}>+</button>
                     </div>
-                    <button type="button" className="text-xs text-white/60 hover:text-white underline underline-offset-4" onClick={() => removeItem(l.productId, l.size)}>
+                    <button type="button" className="text-xs text-black/60 hover:text-black underline underline-offset-4" onClick={() => removeItem(l.productId, l.size)}>
                       Remove
                     </button>
                   </div>
@@ -194,7 +194,7 @@ export default function CheckoutClient() {
 
       <form onSubmit={onSubmit} className="mt-8 space-y-4">
         <div className="space-y-2">
-          <label className="text-sm text-white/80" htmlFor="customerName">
+          <label className="text-sm text-black/80" htmlFor="customerName">
             Name (optional)
           </label>
           <input
@@ -206,7 +206,7 @@ export default function CheckoutClient() {
           />
         </div>
         <div className="space-y-2">
-          <label className="text-sm text-white/80" htmlFor="email">
+          <label className="text-sm text-black/80" htmlFor="email">
             Email
           </label>
           <input
@@ -219,7 +219,7 @@ export default function CheckoutClient() {
           />
         </div>
         <div className="space-y-2">
-          <label className="text-sm text-white/80" htmlFor="phone">
+          <label className="text-sm text-black/80" htmlFor="phone">
             Phone
           </label>
           <input
@@ -232,11 +232,11 @@ export default function CheckoutClient() {
           />
         </div>
 
-        <div className="rounded-xl border border-white/10 bg-white/5 p-5">
-          <div className="font-medium">Shipping address</div>
+        <div className="border border-black/10 bg-black/5 p-5">
+          <div className="font-medium text-black">Shipping address</div>
           <div className="mt-4 space-y-4">
             <div className="space-y-2">
-              <label className="text-sm text-white/80" htmlFor="shipAddress1">
+              <label className="text-sm text-black/80" htmlFor="shipAddress1">
                 Address line 1
               </label>
               <input
@@ -249,7 +249,7 @@ export default function CheckoutClient() {
               />
             </div>
             <div className="space-y-2">
-              <label className="text-sm text-white/80" htmlFor="shipAddress2">
+              <label className="text-sm text-black/80" htmlFor="shipAddress2">
                 Address line 2 (optional)
               </label>
               <input
@@ -262,7 +262,7 @@ export default function CheckoutClient() {
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               <div className="space-y-2 sm:col-span-1">
-                <label className="text-sm text-white/80" htmlFor="shipCity">
+                <label className="text-sm text-black/80" htmlFor="shipCity">
                   City
                 </label>
                 <input
@@ -275,7 +275,7 @@ export default function CheckoutClient() {
                 />
               </div>
               <div className="space-y-2 sm:col-span-1">
-                <label className="text-sm text-white/80" htmlFor="shipState">
+                <label className="text-sm text-black/80" htmlFor="shipState">
                   State
                 </label>
                 <input
@@ -288,7 +288,7 @@ export default function CheckoutClient() {
                 />
               </div>
               <div className="space-y-2 sm:col-span-1">
-                <label className="text-sm text-white/80" htmlFor="shipZip">
+                <label className="text-sm text-black/80" htmlFor="shipZip">
                   Zip
                 </label>
                 <input
@@ -309,7 +309,7 @@ export default function CheckoutClient() {
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex h-11 w-full items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium tracking-wide hover:opacity-90 transition-opacity disabled:opacity-60"
+          className="inline-flex h-11 w-full items-center justify-center bg-[var(--accent)] text-black font-medium tracking-wide hover:opacity-90 transition-opacity disabled:opacity-60 border border-black"
         >
           {submitting ? "Submitting..." : "Submit order"}
         </button>

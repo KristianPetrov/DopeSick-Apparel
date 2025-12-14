@@ -71,7 +71,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          <header className="sticky top-0 z-50 w-full border-b border-[var(--accent)]/40" style={{ backgroundColor: "#7f1d1d" }}>
+          <header className="sticky top-0 z-50 w-full border-b border-[var(--accent)]/40" style={{ backgroundColor: "#ffffff" }}>
             <nav className="mx-auto max-w-6xl px-6 md:px-10 h-16 flex items-center justify-between">
               <Link href="/" aria-label="Home" className="inline-flex items-center">
                 <Image
@@ -87,25 +87,25 @@ export default async function RootLayout({
               </Link>
               <div className="flex items-center gap-3">
                 <div className="hidden md:flex items-center gap-3">
-                  <Link className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/store">Shop</Link>
-                  <Link className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/#story">Our Story</Link>
+                  <Link className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/store">Shop</Link>
+                  <Link className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/about">Our Story</Link>
                   <Link
-                    className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/#contact">Contact</Link>
+                    className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/#contact">Contact</Link>
                   <Link
-                    className="inline-flex h-9 px-4 items-center justify-center rounded-full bg-white text-[var(--accent)] hover:bg-[var(--accent)] hover:text-black shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200"
+                    className="inline-flex h-11 px-4 items-center justify-center bg-[var(--accent)] text-black hover:bg-[var(--accent)] hover:text-white shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200 border border-black"
                     href="/get-listed"
                   >
                     GET LISTED
                   </Link>
                   {authLink ? (
                     <Link
-                      className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200"
+                      className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200"
                       href={authLink.href}
                     >
                       {authLink.label}
                     </Link>
                   ) : (
-                    <Link className="inline-flex h-9 px-4 items-center justify-center rounded-full border border-white text-white bg-transparent hover:bg-white hover:text-[var(--accent)] hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/login">Login</Link>
+                    <Link className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/login">Login</Link>
                   )}
                 </div>
                 <MobileMenu />

@@ -55,7 +55,7 @@ export default function RegisterPage() {
   return (
     <main className="mx-auto max-w-md px-6 md:px-10 py-12">
       <h1 className="text-2xl font-semibold tracking-wide">Create Account</h1>
-      <p className="mt-2 text-sm text-white/70">
+      <p className="mt-2 text-sm text-black/70">
         Already have an account?{" "}
         <Link className="text-[var(--accent)] hover:underline" href="/login">
           Login
@@ -65,7 +65,7 @@ export default function RegisterPage() {
 
       <form onSubmit={onSubmit} className="mt-8 space-y-4">
         <div className="space-y-2">
-          <label className="text-sm text-white/80" htmlFor="name">
+          <label className="text-sm text-black/80" htmlFor="name">
             Name (optional)
           </label>
           <input
@@ -74,11 +74,11 @@ export default function RegisterPage() {
             autoComplete="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="h-11 w-full rounded-md bg-black border border-white/20 px-3 outline-none focus:border-[var(--accent)]"
+            className="h-11 w-full bg-white border border-black/20 px-3 outline-none focus:border-[var(--accent)]"
           />
         </div>
         <div className="space-y-2">
-          <label className="text-sm text-white/80" htmlFor="email">
+          <label className="text-sm text-black/80" htmlFor="email">
             Email
           </label>
           <input
@@ -88,11 +88,11 @@ export default function RegisterPage() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="h-11 w-full rounded-md bg-black border border-white/20 px-3 outline-none focus:border-[var(--accent)]"
+            className="h-11 w-full bg-white border border-black/20 px-3 outline-none focus:border-[var(--accent)]"
           />
         </div>
         <div className="space-y-2">
-          <label className="text-sm text-white/80" htmlFor="password">
+          <label className="text-sm text-black/80" htmlFor="password">
             Password
           </label>
           <input
@@ -102,11 +102,11 @@ export default function RegisterPage() {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="h-11 w-full rounded-md bg-black border border-white/20 px-3 outline-none focus:border-[var(--accent)]"
+            className="h-11 w-full bg-white border border-black/20 px-3 outline-none focus:border-[var(--accent)]"
           />
         </div>
         <div className="space-y-2">
-          <label className="text-sm text-white/80" htmlFor="confirmPassword">
+          <label className="text-sm text-black/80" htmlFor="confirmPassword">
             Confirm Password
           </label>
           <input
@@ -116,7 +116,7 @@ export default function RegisterPage() {
             required
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className="h-11 w-full rounded-md bg-black border border-white/20 px-3 outline-none focus:border-[var(--accent)]"
+            className="h-11 w-full bg-white border border-black/20 px-3 outline-none focus:border-[var(--accent)]"
           />
         </div>
 
@@ -125,7 +125,7 @@ export default function RegisterPage() {
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex h-11 w-full items-center justify-center rounded-full bg-[var(--accent)] text-black font-medium tracking-wide hover:opacity-90 transition-opacity disabled:opacity-60"
+          className="inline-flex h-11 w-full items-center justify-center bg-[var(--accent)] text-black font-medium tracking-wide hover:opacity-90 transition-opacity disabled:opacity-60 border border-black"
         >
           {submitting ? "Creating..." : "Create account"}
         </button>
