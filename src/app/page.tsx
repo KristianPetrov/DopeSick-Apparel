@@ -44,13 +44,13 @@ export default function Home() {
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
           <Link
             href="/get-listed"
-            className="inline-flex h-11 px-4 md:px-6 items-center justify-center bg-white text-black font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:opacity-90 transition-opacity border border-black"
+            className="inline-flex h-11 px-4 md:px-6 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200"
           >
             GET LISTED
           </Link>
           <Link
             href="/intake"
-            className="inline-flex h-11 px-4 md:px-6 items-center justify-center bg-white text-black font-medium text-sm md:text-base tracking-normal md:tracking-wide whitespace-nowrap hover:opacity-90 transition-opacity border border-black"
+            className="inline-flex h-11 px-4 md:px-6 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200"
           >
             GET SOBER
           </Link>

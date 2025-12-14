@@ -92,7 +92,7 @@ export default async function RootLayout({
                   <Link
                     className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200" href="/#contact">Contact</Link>
                   <Link
-                    className="inline-flex h-11 px-4 items-center justify-center bg-[var(--accent)] text-black hover:bg-[var(--accent)] hover:text-white shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200 border border-black"
+                    className="inline-flex h-11 px-4 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200"
                     href="/get-listed"
                   >
                     GET LISTED
