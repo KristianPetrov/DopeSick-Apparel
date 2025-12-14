@@ -7,10 +7,33 @@ export default function AboutPage() {
         {/* Header */}
         <div className="space-y-3">
           <h1 className="text-3xl md:text-4xl font-semibold tracking-wide text-black">About DopeSick Recovery</h1>
-          <p className="text-lg text-black/80 leading-relaxed">
-            We are the sober people who refuse to remain anonymous—transforming recovery into visibility, access, and action.
-          </p>
         </div>
+
+        {/* About Us Section */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold tracking-wide text-black">About Us</h2>
+          <div className="border border-black/10 bg-black/5 p-6 space-y-4">
+            <p className="text-base leading-relaxed text-black/90">
+              DopeSick Recovery was created by people in recovery who know firsthand how broken the system can be.
+            </p>
+            <p className="text-base leading-relaxed text-black/90">
+              Finding help shouldn't feel like navigating a minefield of misinformation, shady marketing, or empty promises. Yet for too many people suffering from addiction, that's exactly what it is.
+            </p>
+            <p className="text-base leading-relaxed text-black/90 font-semibold">
+              DopeSick Recovery exists to change that.
+            </p>
+            <p className="text-base leading-relaxed text-black/90">
+              As an affiliate of DopeSick Apparel, we carry the same refusal to remain anonymous into the recovery space. We are sober people standing publicly in our recovery—connecting addicts and alcoholics with reputable detox, treatment, and sober living options, while giving ethical providers a transparent, values-driven platform to reach those seeking help.
+            </p>
+            <p className="text-base leading-relaxed text-black/90">
+              We believe recovery deserves visibility. We believe integrity saves lives. And we believe lived experience belongs at the center of the solution.
+            </p>
+            <p className="text-base leading-relaxed text-black/90 font-semibold mt-4">
+              This isn't just a directory.<br />
+              It's a recovery movement with standards.
+            </p>
+          </div>
+        </section>
 
         {/* Mission Statement - Public */}
         <section className="space-y-4">

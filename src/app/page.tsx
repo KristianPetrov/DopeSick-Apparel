@@ -13,46 +13,37 @@ export default function Home() {
           <div className="candle-glow" aria-hidden />
           <Image
             src="/dopesick-graffiti-logo.png"
-            alt="Dopesick Apparel"
+            alt="DopeSick Recovery"
             width={560}
             height={200}
             priority
             className="relative z-[1]"
           />
         </div>
-        <div className="-mt-2 flex flex-col items-center gap-3">
-          <div className="inline-flex items-center justify-center border border-black/15 bg-black/5 px-4 py-2">
-            <span className="text-xs md:text-sm font-semibold tracking-[0.22em] text-black/90">
-              REFUSE TO REMAIN ANONYMOUS
-            </span>
-          </div>
-          <div className="max-w-3xl text-center text-black/80">
-            <p className="text-base md:text-lg font-semibold tracking-wide">
-              ⚠️MAKING SOBRIETY A TREND THRU FASHION ⚠️
-            </p>
-            <p className="mt-1 text-sm md:text-base">
-              We are the New Gen Sober People
-            </p>
-            <p className="mt-1 text-sm md:text-base font-semibold text-black/90">
-              We Refuse to Remain Anonymous💥NON-ANON
-            </p>
-          </div>
-        </div>
-        <p className="text-balance leading-relaxed text-lg md:text-xl lg:text-2xl max-w-3xl">
-          To redefine streetwear through the lens of recovery — bold, unapologetic, and born from the struggle. Dopesick Apparel stands for the ones who turned their pain into purpose.
+
+        {/* Hero Headline */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-black">
+          Recovery, Out Loud.
+        </h1>
+
+        {/* Hero Subheadline */}
+        <p className="text-balance leading-relaxed text-lg md:text-xl lg:text-2xl max-w-4xl text-black/90">
+          DopeSick Recovery connects people struggling with addiction to reputable detox, rehab, and sober living—while giving ethical providers a platform built on trust, transparency, and lived experience.
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
-          <Link
-            href="/get-listed"
-            className="inline-flex h-11 px-4 md:px-6 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200"
-          >
-            GET LISTED
-          </Link>
+
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-4">
           <Link
             href="/intake"
-            className="inline-flex h-11 px-4 md:px-6 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200"
+            className="inline-flex h-11 px-6 md:px-8 items-center justify-center bg-[var(--accent)] text-black font-semibold text-base md:text-lg tracking-wide whitespace-nowrap hover:opacity-90 transition-opacity border border-black"
           >
-            GET SOBER
+            Find Help Now
+          </Link>
+          <Link
+            href="/get-listed"
+            className="inline-flex h-11 px-6 md:px-8 items-center justify-center border border-black text-black bg-transparent hover:bg-black hover:text-white hover:border-[var(--accent)] shadow-none hover:shadow-[0_0_16px_2px_rgba(220,38,38,0.6)] transition-all duration-200 font-semibold text-base md:text-lg tracking-wide whitespace-nowrap"
+          >
+            List Your Program
           </Link>
         </div>
         <section
